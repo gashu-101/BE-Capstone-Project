@@ -1,67 +1,109 @@
-# **Social Media API**
+# 🌐 Social Media API
 
-> This repository contains a RESTful API built in Django and Django REST Framework for a social media platform. The API
-> enables users to manage their profiles, follow other users, create and retrieve posts, manage likes and comments, and
-> perform standard social media activities.
-> Users authenticate with their email addresses and passwords, and the API uses token-based authentication to verify
-requests.
+## 📜 Project Overview
+This project is a Social Media API built using Django and Django REST Framework (DRF). It allows users to create, update, delete posts, follow other users, and view a feed of posts from the users they follow. The project simulates a real-world social media environment focusing on CRUD operations, user relationships, and efficient data handling.
 
+## 🚀 Features
 
-# How to Use
-```shell
-# Clone the repository
-git clone https://github.com/olenaliuby/social-media-api.git
+### 1. 📝 Post Management (CRUD)
+- Users can create, read, update, and delete posts.
+- Each post contains:
+  - **Content** (required text)
+  - **User** (author of the post)
+  - **Timestamp** (auto-generated)
+  - **Optional Media** (e.g., image URLs 🖼️)
+- Posts can only be updated or deleted by the user who created them.
+- Validation is in place for required fields like `Content` and `User`.
 
-# Create a virtual environment and activate it
-python -m venv venv
-source venv/bin/activate
+### 2. 👤 User Management (CRUD)
+- Users can register, log in, and manage their accounts.
+- Each user has:
+  - **Username** (unique ✨)
+  - **Email** (unique 📧)
+  - **Password** (secure 🔒)
+  - Optional **Profile Fields** such as Bio 📝 and Profile Picture 📷.
+- Only authenticated users can create, update, or delete posts.
 
-# Install necessary packages
-pip install -r requirements.txt
+### 3. 🔄 Follow System
+- Users can follow and unfollow others 🔔.
+- A user cannot follow themselves 🚫.
+- Follow relationships are stored and managed efficiently.
 
-# Set up environmental variables
-SECRET_KEY = SECRET_KEY
-CELERY_BROKER_URL = CELERY_BROKER_URL
-CELERY_RESULT_BACKEND = CELERY_RESULT_BACKEND
+### 4. 📰 Feed of Posts
+- Users can view a feed of posts from the users they follow.
+- Posts in the feed are displayed in reverse chronological order (newest first ⏳).
+- Optionally, users can filter the feed by date 📅 or search posts by keywords 🔍.
 
-# Apply migrations and start the server
-python manage.py migrate
-python manage.py runserver
+## ⚙️ Technical Requirements
 
-# Load initial data
-python manage.py loaddata social_media_info_for_db.json
+### 🗄️ Database
+- The API uses Django ORM to manage the database.
+- **Models**:
+  - `User`: Manages user information and profile fields.
+  - `Post`: Stores post content, author, and timestamp.
+  - `Follower`: Tracks relationships between users (followers/following).
 
-# Run Celery to enable scheduled posts
-celery -A social_media_api worker -l info
+### 🔑 Authentication
+- User authentication is managed using Django’s built-in system 🔐.
+- Optionally, token-based authentication (JWT) is supported for secure access.
 
-# Register a user and retrieve a token by user endpoints to test the API
-```
+### 🛠️ API Design
+- The API follows RESTful principles, with appropriate HTTP methods for each operation:
+  - `GET`, `POST`, `PUT`, `DELETE`
+- Error handling is implemented with relevant HTTP status codes 🛑.
 
+### 🌍 Deployment
+- The API is deployed on a platform like Heroku 🚀 or PythonAnywhere 🖥️.
+- Ensure the API is secure 🔒 and performs well 🚀.
 
+### 🔄 Pagination and Sorting
+- Pagination 📄 is added to the post feed for users with large numbers of followed users or posts.
+- Sorting options like sorting by Date 📅 or Popularity ⭐ are available.
 
-## **Features**
+## 🌟 Stretch Goals (Optional)
+- **❤️ Likes and Comments**: Users can like ❤️ and comment 💬 on posts.
+- **🔔 Notifications**: Users are notified when someone follows them, likes their post, or comments on it.
+- **📩 Direct Messaging**: Allows private messaging between users.
+- **🔄 Post Sharing**: Users can share or "repost" content.
+- **🏷️ Hashtags and Tagging**: Users can tag others or use hashtags #️⃣.
+- **🔥 Trending Posts**: Displays popular posts based on likes or reposts.
+- **🛠️ Profile Customization**: Users can add fields like Location 📍 and Cover Photo 🖼️.
+- **📷 Media Uploads**: Supports media file uploads (images, videos) to a cloud service like AWS S3 ☁️.
 
-* **User Profile Management**: Users can create, retrieve, and update their profiles, including profile pictures, bios,
-and other details. The API also provides endpoints to search for users based on usernames and other criteria.
+## 🛠️ How to Run the Project
 
-* **Follow/Unfollow**: Users can follow and unfollow other users, and retrieve lists of their followers and those they are
-following.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/gashu-101/BE-Capstone-Project.git
+   ```
 
-*  **Post Creation and Management**: Users can create, retrieve, and update their posts, with text content and optional
-media attachments (images as an optional feature). The API provides ways to retrieve posts by a range of criteria
-including hashtags and authorship by followed users.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-* **Interactions**: Users can like/unlike posts, retrieve posts they have liked, and add comments to posts.
+3. Set up the database:
+   ```bash
+   python manage.py migrate
+   ```
 
-* **User Registration and Authentication**: Users register with their email and passwords and receive a token upon login
-for subsequent authentication. The API also includes a logout function.
+4. Create a superuser:
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-* **Scheduled Post Creation**: Using Celery, users can schedule posts to be created at specific times.
+5. Run the server:
+   ```bash
+   python manage.py runserver
+   ```
 
-* **API Permissions**: The API uses Django's authentication and permission classes to ensure security and confidentiality.
-Only authenticated users can perform actions like creating posts, liking posts, and following/unfollowing others.
+6. Access the API at `http://127.0.0.1:8000/`.
 
-* **API Documentation**: All the endpoints are well-documented by DRF Spectacular with clear instructions and examples for use.
+## 🚀 Deployment
+To deploy on Heroku:
+1. Set up your Heroku project.
+2. Add necessary environment variables for your database and secret key.
+3. Deploy your code to Heroku.
 
-## **Database Schema**
-![Social Media Api DB](social-media-api-db.png)
+## 📄 License
+This project is licensed under the MIT License.
