@@ -54,8 +54,12 @@ WSGI_APPLICATION = "socialmedia_api.wsgi.application"
 # i have used mysql database
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "gashu$default",
+        "USER": "gashu",
+        "PASSWORD": "G7juy63A9@zAziR",
+        "HOST": "gashu.mysql.pythonanywhere-services.com",  # Set to "localhost" if the database is on the same machine
+        "PORT": "3306",  # Set to "3306" for the default MySQL port
     }
 }
 
