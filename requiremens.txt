@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 Django>=4.0,<5.0
 djangorestframework>=3.12,<4.0
 mysqlclient>=2.0  # If you're using MySQL as the database
+=======
+Django>=4.0,<5.0
+djangorestframework>=3.12,<4.0
+mysqlclient>=2.0  # If you're using MySQL as the database
+>>>>>>> 59a361226ec2adb16de5c4f6aed78bd96bb36d58

@@ -1,4 +1,4 @@
-# 📱 Social Media API with Django and DRF (No Authentication)
+# 📱 Social Media API with Django
 
 Welcome to the **Social Media API** project built using **Django** and **Django REST Framework**. This API allows users to create posts, follow/unfollow other users, and view a personalized feed! 🚀
 
@@ -16,7 +16,7 @@ Follow these steps to get the project up and running on your local machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/gashu-101/BE-Capstone-Project.git
 cd socialmedia_api
 ```
 
