@@ -106,8 +106,6 @@ Some ideas to improve the API further:
 
 This project is licensed under the MIT License.
 
----
-
 Thanks for checking out this project! ✨ Feel free to contribute or reach out if you have any questions. 😊
 
 ```
