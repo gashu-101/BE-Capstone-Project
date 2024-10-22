@@ -102,12 +102,4 @@ Some ideas to improve the API further:
 - ❤️ **Likes**: Enable users to like posts.
 - 🔔 **Notifications**: Notify users when they get followed or receive a new post in their feed.
 
-## 📝 License
-
-This project is licensed under the MIT License.
-
 Thanks for checking out this project! ✨ Feel free to contribute or reach out if you have any questions. 😊
-
-```
-
-```
