@@ -20,8 +20,6 @@ git clone <repository-url>
 cd socialmedia_api
 ```
 
-````
-
 ### 2. Install Dependencies
 
 Make sure you have **Python** and **pip** installed. Then, install the required Python packages:
@@ -112,4 +110,6 @@ This project is licensed under the MIT License.
 
 Thanks for checking out this project! ✨ Feel free to contribute or reach out if you have any questions. 😊
 
-````
+```
+
+```
